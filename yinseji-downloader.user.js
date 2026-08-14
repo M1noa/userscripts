@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Yinseji Downloader
 // @namespace    https://minoa.cat
-// @description lmao they only check client side..... goto any profile and click Download All Posts
+// @description Downloads videos (AES-128 encrypted HLS) and images from yinseji.com profiles
 // @author       Minoa
-// @version      2.6.0
+// @version      3.0.0
 // @license      MIT
 // @match        https://yinseji.com/*
 // @match        https://www.yinseji.com/*
@@ -95,6 +95,52 @@
         },
         onload: res => {
           if (res.status === 200) resolve(res.responseText);
+          else reject(new Error(`HTTP status ${res.status}`));
+        },
+        onerror: err => reject(err)
+      });
+    });
+  }
+
+  // --- fetch array buffer (for AES key) ---
+  function fetchArrayBuffer(url) {
+    return new Promise((resolve, reject) => {
+      GM_xmlhttpRequest({
+        method: 'GET',
+        url: url,
+        responseType: 'arraybuffer',
+        withCredentials: true,
+        headers: {
+          'Accept': '*/*',
+          'Origin': window.location.origin,
+          'Referer': window.location.href,
+          'User-Agent': navigator.userAgent
+        },
+        onload: res => {
+          if (res.status === 200) resolve(res.response);
+          else reject(new Error(`HTTP status ${res.status}`));
+        },
+        onerror: err => reject(err)
+      });
+    });
+  }
+
+  // --- fetch json via GM_xmlhttpRequest ---
+  function fetchJsonGM(url) {
+    return new Promise((resolve, reject) => {
+      GM_xmlhttpRequest({
+        method: 'GET',
+        url: url,
+        responseType: 'json',
+        withCredentials: true,
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Origin': window.location.origin,
+          'Referer': window.location.href,
+          'User-Agent': navigator.userAgent
+        },
+        onload: res => {
+          if (res.status === 200) resolve(res.response);
           else reject(new Error(`HTTP status ${res.status}`));
         },
         onerror: err => reject(err)
@@ -222,6 +268,80 @@
     saveBlob(mergedBlob, `${outputName}.ts`);
   }
 
+  // --- download AES-128 encrypted HLS stream via playback-info API ---
+  async function downloadEncryptedHls(fileId, outputName, progressCallback) {
+    log(`Fetching playback info for file: ${fileId}`);
+    const pbInfo = await fetchJsonGM(`https://api.yinseji.com/v1/video/playback-info?vid=${fileId}`);
+    const manifestUrl = pbInfo?.data?.hls?.manifestUrl;
+    if (!manifestUrl) throw new Error('No manifest URL in playback info response');
+
+    log(`Fetching HLS manifest: ${manifestUrl}`);
+    const playlistText = await fetchText(manifestUrl);
+    const lines = playlistText.split('\n').map(l => l.trim());
+
+    // Parse AES-128 key info from #EXT-X-KEY
+    let keyUrl = null;
+    let ivHex = null;
+    const keyLine = lines.find(l => l.startsWith('#EXT-X-KEY'));
+    if (keyLine) {
+      const uriMatch = keyLine.match(/URI="([^"]+)"/);
+      const ivMatch = keyLine.match(/IV=0x([0-9a-fA-F]+)/);
+      keyUrl = uriMatch ? uriMatch[1] : null;
+      ivHex = ivMatch ? ivMatch[1] : null;
+    }
+
+    // Parse segment URLs
+    const segmentUrls = [];
+    lines.forEach(line => {
+      if (line && !line.startsWith('#')) {
+        segmentUrls.push(line.startsWith('http') ? line : manifestUrl.replace(/[^/]+$/, '') + line);
+      }
+    });
+
+    if (segmentUrls.length === 0) throw new Error('No segments found in manifest');
+    log(`Found ${segmentUrls.length} segments (encrypted: ${!!keyUrl})`);
+
+    // Fetch AES key if encrypted
+    let aesKey = null;
+    let ivBytes = null;
+    if (keyUrl) {
+      log('Fetching AES-128 decryption key');
+      const keyBuf = await fetchArrayBuffer(keyUrl);
+      aesKey = await crypto.subtle.importKey('raw', keyBuf, { name: 'AES-CBC' }, false, ['decrypt']);
+      if (ivHex) {
+        ivBytes = new Uint8Array(ivHex.match(/.{2}/g).map(b => parseInt(b, 16)));
+      }
+    }
+
+    // Download and decrypt segments
+    const segments = [];
+    for (let i = 0; i < segmentUrls.length; i++) {
+      if (progressCallback) progressCallback(Math.round((i / segmentUrls.length) * 100));
+      const blob = await fetchBlob(segmentUrls[i]);
+      let buf = await blob.arrayBuffer();
+
+      if (aesKey) {
+        let iv = ivBytes;
+        if (!iv) {
+          iv = new Uint8Array(16);
+          new DataView(iv.buffer).setUint32(12, i);
+        }
+        buf = await crypto.subtle.decrypt({ name: 'AES-CBC', iv }, aesKey, buf);
+      }
+
+      segments.push(new Uint8Array(buf));
+    }
+
+    // Concatenate decrypted segments
+    const totalLen = segments.reduce((a, s) => a + s.length, 0);
+    const merged = new Uint8Array(totalLen);
+    let off = 0;
+    for (const s of segments) { merged.set(s, off); off += s.length; }
+
+    log(`Saving assembled video: ${outputName} (${(totalLen / 1048576).toFixed(1)} MB)`);
+    saveBlob(new Blob([merged], { type: 'video/mp2t' }), outputName);
+  }
+
   // --- execute direct browser download or HLS assembly for a list of items ---
   async function downloadFilesList(allFiles, username, btn) {
     log(`Initializing queue download of ${allFiles.length} file(s)...`);
@@ -230,8 +350,21 @@
       if (btn) btn.textContent = `Downloading (${i + 1}/${allFiles.length})...`;
 
       const file = allFiles[i];
-      const isHls = file.url.includes('.m3u8') || file.url.includes('/master.m3u8') || file.url.includes('.m3u') || file.url.includes('.m4s');
       const cleanName = file.filename.replace(/[\/\\\?\%\*\:\|\\"<>\r\n]/g, '_');
+
+      if (file.hlsVid) {
+        // Encrypted HLS via playback-info API
+        const tsName = cleanName.replace(/\.[a-z0-9]+$/i, '') + '.ts';
+        try {
+          log(`Downloading encrypted HLS video (vid: ${file.hlsVid}) as: ${tsName}`);
+          await downloadEncryptedHls(file.hlsVid, tsName, (pct) => {
+            if (btn) btn.textContent = `Decrypting stream (${i + 1}/${allFiles.length}) ${pct}%...`;
+          });
+        } catch (e) {
+          log(`Encrypted HLS download failed for ${file.hlsVid}: ${e.message}`);
+        }
+      } else {
+      const isHls = file.url.includes('.m3u8') || file.url.includes('/master.m3u8') || file.url.includes('.m3u') || file.url.includes('.m4s');
 
       if (isHls) {
         try {
@@ -271,6 +404,7 @@
             }
           });
         });
+      }
       }
     }
   }
@@ -363,6 +497,13 @@
               allFiles.push({
                 url: file.url.replace(/\\/g, ''),
                 filename: `${username}_${safeName}`
+              });
+            } else if (file.hlsManifestKey && file._id) {
+              const baseName = (file.name || `video_${allFiles.length}`).replace(/\.[^.]+$/, '');
+              log(`Mapping encrypted HLS video: ${baseName}.ts (vid: ${file._id})`);
+              allFiles.push({
+                hlsVid: file._id,
+                filename: `${username}_${baseName}.ts`
               });
             }
           });
