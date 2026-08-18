@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         YouTube Transparent Header
-// @namespace    http://tampermonkey.net/
-// @version      1.3
-// @description  Makes YouTube's top navigation bar and search bar semi-transparent
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.3.1
+// @description  Makes YouTube's top navigation bar and search bar semi-transparent.
 // @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://www.youtube.com/*
 // @grant        none
-// @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/526591/YouTube%20Transparent%20Header.user.js
-// @updateURL https://update.greasyfork.org/scripts/526591/YouTube%20Transparent%20Header.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/526591/YouTube%20Transparent%20Header.user.js
+// @updateURL    https://update.greasyfork.org/scripts/526591/YouTube%20Transparent%20Header.meta.js
 // ==/UserScript==
 
 (function() {

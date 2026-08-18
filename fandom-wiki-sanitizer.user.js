@@ -1,30 +1,19 @@
 // ==UserScript==
 // @name         Fandom Wiki Sanitizer
-// @namespace    https://minoa.cat
-// @version      3.0.0
-// @description  strips fandom branding, ads, popups, and trackers. blocks all tracking network requests (fetch, xhr, sendBeacon). redirects minecraft.fandom.com to minecraft.wiki.
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      3.0.1
+// @description  Strips Fandom branding, ads, popups, and trackers. Blocks all tracking network requests (fetch, XHR, sendBeacon). Redirects minecraft.fandom.com to minecraft.wiki.
 // @author       Minoa
 // @license      MIT
-// @homepageURL  https://minoa.cat
-// @supportURL   https://github.com/M2noa
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        *://*.fandom.com/*
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        unsafeWindow
-// @downloadURL https://update.greasyfork.org/scripts/571712/Fandom%20Wiki%20Sanitizer.user.js
-// @updateURL https://update.greasyfork.org/scripts/571712/Fandom%20Wiki%20Sanitizer.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/571712/Fandom%20Wiki%20Sanitizer.user.js
+// @updateURL    https://update.greasyfork.org/scripts/571712/Fandom%20Wiki%20Sanitizer.meta.js
 // ==/UserScript==
-
-// MIT License — Copyright (c) 2025 Minoa
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED
-// "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
 
 (function () {
     'use strict';

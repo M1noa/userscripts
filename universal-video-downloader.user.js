@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Universal Video Downloader
-// @namespace    http://tampermonkey.net/
-// @version      25.1
-// @description  download videos from any site. m3u8/m3u. site-specific extraction. cors fallback. works everywhere.
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      25.1.1
+// @description  Download videos from any site: m3u8/m3u support, site-specific extraction, CORS fallback. Works everywhere.
 // @author       Minoa
 // @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        *://*/*
 // @require      https://cdn.jsdelivr.net/npm/m3u8-parser@4.7.1/dist/m3u8-parser.min.js
 // @require      https://cdn.jsdelivr.net/npm/@warren-bank/ffmpeg@0.12.10-wasmbinary.3/dist/umd/ffmpeg.js
@@ -21,8 +23,8 @@
 // @grant        unsafeWindow
 // @connect      *
 // @run-at       document-start
-// @downloadURL https://update.greasyfork.org/scripts/554755/Universal%20Video%20Downloader.user.js
-// @updateURL https://update.greasyfork.org/scripts/554755/Universal%20Video%20Downloader.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/554755/Universal%20Video%20Downloader.user.js
+// @updateURL    https://update.greasyfork.org/scripts/554755/Universal%20Video%20Downloader.meta.js
 // ==/UserScript==
 
 (function () {

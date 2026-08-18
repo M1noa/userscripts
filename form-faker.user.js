@@ -1,20 +1,21 @@
 // ==UserScript==
 // @name         Form Faker
-// @namespace    https://minoa.cat
-// @version      1.4.0
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.4.1
 // @description  Fill any form with realistic fake data pulled from US Census name lists. Smart field detection, framework compat, persistent cache with background refresh.
 // @author       Minoa
-// @homepage     https://minoa.cat
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @connect      raw.githubusercontent.com
-// @license      MIT
 // @run-at       document-idle
-// @downloadURL https://update.greasyfork.org/scripts/586783/Form%20Faker.user.js
-// @updateURL https://update.greasyfork.org/scripts/586783/Form%20Faker.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/586783/Form%20Faker.user.js
+// @updateURL    https://update.greasyfork.org/scripts/586783/Form%20Faker.meta.js
 // ==/UserScript==
 
 (function () {

@@ -1,17 +1,19 @@
 // ==UserScript==
 // @name         Honey Coupon Checker (No Spyware)
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Check for Honey coupons on demand without tracking
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.0.1
+// @description  Check for Honey coupons on demand, without tracking.
 // @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
 // @grant        GM_xmlhttpRequest
 // @connect      d.joinhoney.com
-// @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/561365/Honey%20Coupon%20Checker%20%28No%20Spyware%29.user.js
-// @updateURL https://update.greasyfork.org/scripts/561365/Honey%20Coupon%20Checker%20%28No%20Spyware%29.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/561365/Honey%20Coupon%20Checker%20%28No%20Spyware%29.user.js
+// @updateURL    https://update.greasyfork.org/scripts/561365/Honey%20Coupon%20Checker%20%28No%20Spyware%29.meta.js
 // ==/UserScript==
 
 (function() {

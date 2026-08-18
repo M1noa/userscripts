@@ -1,9 +1,12 @@
 // ==UserScript==
-// @name         coom & keem enhance (supports new domains
-// @namespace    http://minoa.cat/
-// @version      1.5
+// @name         Coom & Keem Enhance (Supports New Domains)
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.5.1
 // @description  Adds an auto-random post feature, removes sidebar ads, and adds various UI tweaks on coomer/kemono.
-// @author       minoa.cat & Gemini
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://coomer.su/*
 // @match        https://coomer.party/*
 // @match        https://coomer.st/*
@@ -13,10 +16,9 @@
 // @grant        GM_addStyle
 // @grant        GM_getValue
 // @grant        GM_setValue
-// @license      MIT
 // @run-at       document-body
-// @downloadURL https://update.sleazyfork.org/scripts/543726/coom%20%20keem%20enhance%20%28supports%20new%20domains.user.js
-// @updateURL https://update.sleazyfork.org/scripts/543726/coom%20%20keem%20enhance%20%28supports%20new%20domains.meta.js
+// @downloadURL  https://update.sleazyfork.org/scripts/543726/coom%20%20keem%20enhance%20%28supports%20new%20domains.user.js
+// @updateURL    https://update.sleazyfork.org/scripts/543726/coom%20%20keem%20enhance%20%28supports%20new%20domains.meta.js
 // ==/UserScript==
 
 (function() {

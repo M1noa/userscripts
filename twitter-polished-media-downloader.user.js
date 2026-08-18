@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Twitter Polished Media Downloader
-// @namespace    https://minoa.cat
-// @version      1.9.7
-// @description  Adds a native looking download button to Xitter. Highest quality downloads (works on NSFW-gated posts), reliable multi-file downloads (zipped), selective downloading, link unshortening (removes t.co from focused tweets), and raw tweet/profile data export via the share menu.
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.9.8
+// @description  Adds a native-looking download button to X/Twitter: highest-quality downloads (works on NSFW-gated posts), reliable multi-file downloads (zipped), selective downloading, link unshortening (removes t.co from focused tweets), and raw tweet/profile data export via the share menu.
 // @author       Minoa
 // @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://twitter.com/*
 // @match        https://x.com/*
 // @run-at       document-start
@@ -20,8 +22,8 @@
 // @connect      cdn.syndication.twimg.com
 // @require      https://unpkg.com/jszip@3.7.1/dist/jszip.js
 // @noframes
-// @downloadURL https://update.greasyfork.org/scripts/586507/Twitter%20Polished%20Media%20Downloader.user.js
-// @updateURL https://update.greasyfork.org/scripts/586507/Twitter%20Polished%20Media%20Downloader.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/586507/Twitter%20Polished%20Media%20Downloader.user.js
+// @updateURL    https://update.greasyfork.org/scripts/586507/Twitter%20Polished%20Media%20Downloader.meta.js
 // ==/UserScript==
 
 (function () {

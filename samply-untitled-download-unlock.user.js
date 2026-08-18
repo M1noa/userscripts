@@ -1,17 +1,19 @@
 // ==UserScript==
-// @name         samply & untitled download unlocker
-// @version      1.5
-// @description  makes the export/download button appear on all albums no matter what, so you can save them for archival purposes. works on samply.app and untitled.stream.
-// @author       minoa
-// @license      mit
+// @name         Samply & Untitled Download Unlock
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.5.1
+// @description  Makes the export/download button appear on all albums so you can save them for archival. Works on samply.app and untitled.stream.
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://samply.app/*
 // @match        https://untitled.stream/*
 // @run-at       document-start
 // @grant        none
 // @noframes
-// @namespace    https://greasyfork.org/en/users/1268587-minoa
-// @downloadURL https://update.greasyfork.org/scripts/575043/samply%20%20untitled%20download%20unlocker.user.js
-// @updateURL https://update.greasyfork.org/scripts/575043/samply%20%20untitled%20download%20unlocker.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/575043/samply%20%20untitled%20download%20unlocker.user.js
+// @updateURL    https://update.greasyfork.org/scripts/575043/samply%20%20untitled%20download%20unlocker.meta.js
 // ==/UserScript==
 
 (function () {

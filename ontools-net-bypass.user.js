@@ -1,14 +1,17 @@
 // ==UserScript==
-// @name         ontools.net bypass
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Decrypts the URL on ontools.net and redirects to the decrypted URL
-// @author       Your name
-// @match        *.ontools.net/*
+// @name         Ontools.net Bypass
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      0.1.1
+// @description  Decrypts the URL on ontools.net and redirects to the destination.
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
+// @match        *://ontools.net/*
+// @match        *://*.ontools.net/*
 // @grant        none
-// @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/492890/ontoolsnet%20bypass.user.js
-// @updateURL https://update.greasyfork.org/scripts/492890/ontoolsnet%20bypass.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/492890/ontoolsnet%20bypass.user.js
+// @updateURL    https://update.greasyfork.org/scripts/492890/ontoolsnet%20bypass.meta.js
 // ==/UserScript==
 
 (function() {

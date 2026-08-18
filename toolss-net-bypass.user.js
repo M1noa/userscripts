@@ -1,14 +1,17 @@
 // ==UserScript==
 // @name         Toolss.net Bypass
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Decode the value of the input field named "newwpsafelink" and redirect to the decoded URL after "safelink_redirect="
-// @author       You
-// @match        toolss.net
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      0.1.1
+// @description  Decode the newwpsafelink input field on toolss.net and redirect to the destination after the safelink_redirect.
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
+// @match        *://toolss.net/*
+// @match        *://*.toolss.net/*
 // @grant        none
-// @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/492893/Toolssnet%20Bypass.user.js
-// @updateURL https://update.greasyfork.org/scripts/492893/Toolssnet%20Bypass.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/492893/Toolssnet%20Bypass.user.js
+// @updateURL    https://update.greasyfork.org/scripts/492893/Toolssnet%20Bypass.meta.js
 // ==/UserScript==
 
 (function() {

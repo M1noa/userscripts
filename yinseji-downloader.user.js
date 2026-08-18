@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Yinseji Downloader
-// @namespace    https://minoa.cat
-// @description Downloads videos (AES-128 encrypted HLS) and images from yinseji.com profiles
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      3.0.1
+// @description  Downloads videos (AES-128 encrypted HLS) and images from yinseji.com profiles.
 // @author       Minoa
-// @version      3.0.0
 // @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://yinseji.com/*
 // @match        https://www.yinseji.com/*
 // @run-at       document-end
@@ -16,8 +18,8 @@
 // @connect      s3.yinseji.com
 // @connect      *
 // @noframes
-// @downloadURL https://update.sleazyfork.org/scripts/586531/Yinseji%20Downloader.user.js
-// @updateURL https://update.sleazyfork.org/scripts/586531/Yinseji%20Downloader.meta.js
+// @downloadURL  https://update.sleazyfork.org/scripts/586531/Yinseji%20Downloader.user.js
+// @updateURL    https://update.sleazyfork.org/scripts/586531/Yinseji%20Downloader.meta.js
 // ==/UserScript==
 
 (function () {

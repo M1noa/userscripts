@@ -1,14 +1,16 @@
 // ==UserScript==
-// @name         Mac Torrects Download fix/auto redirect
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  get the b64 from the url and redirect to it
-// @author       You
+// @name         TorrentMac Download Fix & Auto-Redirect
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.0.1
+// @description  Decode the base64 link parameter on torrentmac.net and redirect to the destination.
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://www.torrentmac.net/downloads/?link=*
 // @grant        none
-// @license MIT 
-// @downloadURL https://update.greasyfork.org/scripts/525566/Mac%20Torrects%20Download%20fixauto%20redirect.user.js
-// @updateURL https://update.greasyfork.org/scripts/525566/Mac%20Torrects%20Download%20fixauto%20redirect.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/525566/Mac%20Torrects%20Download%20fixauto%20redirect.user.js
+// @updateURL    https://update.greasyfork.org/scripts/525566/Mac%20Torrects%20Download%20fixauto%20redirect.meta.js
 // ==/UserScript==
 
 (function() {

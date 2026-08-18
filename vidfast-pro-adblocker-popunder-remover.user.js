@@ -1,16 +1,18 @@
 // ==UserScript==
 // @name         VidFast Pro Adblocker & Popunder Remover
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Blocks click ads, popunders, and anti-adblock on vidfast.pro
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.0.1
+// @description  Blocks click ads, popunders, and anti-adblock on vidfast.pro.
 // @author       Minoa
 // @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        *://vidfast.pro/*
 // @match        *://*.vidfast.pro/*
 // @run-at       document-start
 // @grant        none
-// @downloadURL https://update.greasyfork.org/scripts/574316/VidFast%20Pro%20Adblocker%20%20Popunder%20Remover.user.js
-// @updateURL https://update.greasyfork.org/scripts/574316/VidFast%20Pro%20Adblocker%20%20Popunder%20Remover.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/574316/VidFast%20Pro%20Adblocker%20%20Popunder%20Remover.user.js
+// @updateURL    https://update.greasyfork.org/scripts/574316/VidFast%20Pro%20Adblocker%20%20Popunder%20Remover.meta.js
 // ==/UserScript==
 
 (function() {

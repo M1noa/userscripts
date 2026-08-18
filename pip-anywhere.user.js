@@ -1,20 +1,20 @@
 // ==UserScript==
-// @name            pip anywhere
-// @namespace       https://minoa.cat/
-// @version         2.1.1
-// @description     (cick the pip button inside of your userscript manager menu) pip with full custom controls on any site seek bar, buffer indicator, volume, speed, skip, keyboard shortcuts, auto-hide hud. gracefully falls back to legacy pip on unsupported browsers.
-// @author          minoa
-// @license         MIT
-// @homepageURL     https://greasyfork.org/scripts/pip-anywhere
-// @supportURL      https://github.com/M2noa/pip-anywhere/issues
-// @match           *://*/*
-// @grant           GM_registerMenuCommand
-// @grant           GM_unregisterMenuCommand
-// @grant           GM_getValue
-// @grant           GM_setValue
+// @name         PiP Anywhere
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      2.1.2
+// @description  Click the PiP button in your userscript manager menu for PiP with custom controls on any site: seek bar, buffer indicator, volume, speed, skip, keyboard shortcuts, auto-hide HUD. Falls back to legacy PiP on unsupported browsers.
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
+// @match        *://*/*
+// @grant        GM_registerMenuCommand
+// @grant        GM_unregisterMenuCommand
+// @grant        GM_getValue
+// @grant        GM_setValue
 // @noframes
-// @downloadURL https://update.greasyfork.org/scripts/570730/pip%20anywhere.user.js
-// @updateURL https://update.greasyfork.org/scripts/570730/pip%20anywhere.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/570730/pip%20anywhere.user.js
+// @updateURL    https://update.greasyfork.org/scripts/570730/pip%20anywhere.meta.js
 // ==/UserScript==
 
 ;(function () {

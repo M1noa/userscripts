@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         Web Speed Controller
-// @namespace    http://tampermonkey.net/
-// @version      2.0
-// @description  control the speed of website timers, animations, videos, and Date.now
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      2.0.1
+// @description  Control the speed of website timers, animations, videos, and Date.now.
 // @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        *://*/*
 // @grant        none
-// @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/527158/Web%20Speed%20Controller.user.js
-// @updateURL https://update.greasyfork.org/scripts/527158/Web%20Speed%20Controller.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/527158/Web%20Speed%20Controller.user.js
+// @updateURL    https://update.greasyfork.org/scripts/527158/Web%20Speed%20Controller.meta.js
 // ==/UserScript==
 
 (function() {

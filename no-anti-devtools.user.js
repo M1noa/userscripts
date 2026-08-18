@@ -1,42 +1,42 @@
 // ==UserScript==
-// @name            no anti-devtools
-// @namespace       https://minoa.cat/
-// @version         1.1.0
-// @description     kills every known method of devtools detection and blocking. window size spoofing, debugger traps, toString getter traps, timing attacks, keyboard/contextmenu blocking, console method abuse, redirect interception, eval-based loops, and more.
-// @author          minoa
-// @license         MIT
-// @homepageURL     https://greasyfork.org/scripts/no-anti-devtools
-// @supportURL      https://github.com/M2noa/no-anti-devtools/issues
-// @match           *://*/*
-// @exclude         *://*.google.com/*
-// @exclude         *://*.google.co.uk/*
-// @exclude         *://*.google.ca/*
-// @exclude         *://*.google.com.au/*
-// @exclude         *://*.googleapis.com/*
-// @exclude         *://*.gstatic.com/*
-// @exclude         *://*.youtube.com/*
-// @exclude         *://*.facebook.com/*
-// @exclude         *://*.instagram.com/*
-// @exclude         *://*.twitter.com/*
-// @exclude         *://*.x.com/*
-// @exclude         *://*.microsoft.com/*
-// @exclude         *://*.live.com/*
-// @exclude         *://*.outlook.com/*
-// @exclude         *://*.office.com/*
-// @exclude         *://*.apple.com/*
-// @exclude         *://*.icloud.com/*
-// @exclude         *://*.github.com/*
-// @exclude         *://*.gitlab.com/*
-// @exclude         *://*.paypal.com/*
-// @exclude         *://*.stripe.com/*
-// @exclude         *://*.amazon.com/*
-// @exclude         *://*.twitch.tv/*
-// @exclude         *://*.discord.com/*
-// @exclude         *://*.cloudflare.com/*
-// @grant           unsafeWindow
-// @run-at          document-start
-// @downloadURL https://update.greasyfork.org/scripts/570732/no%20anti-devtools.user.js
-// @updateURL https://update.greasyfork.org/scripts/570732/no%20anti-devtools.meta.js
+// @name         No Anti-DevTools
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.1.1
+// @description  Kills every known method of DevTools detection and blocking: window size spoofing, debugger traps, toString getter traps, timing attacks, keyboard/context-menu blocking, console method abuse, redirect interception, eval-based loops, and more.
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
+// @match        *://*/*
+// @exclude      *://*.google.com/*
+// @exclude      *://*.google.co.uk/*
+// @exclude      *://*.google.ca/*
+// @exclude      *://*.google.com.au/*
+// @exclude      *://*.googleapis.com/*
+// @exclude      *://*.gstatic.com/*
+// @exclude      *://*.youtube.com/*
+// @exclude      *://*.facebook.com/*
+// @exclude      *://*.instagram.com/*
+// @exclude      *://*.twitter.com/*
+// @exclude      *://*.x.com/*
+// @exclude      *://*.microsoft.com/*
+// @exclude      *://*.live.com/*
+// @exclude      *://*.outlook.com/*
+// @exclude      *://*.office.com/*
+// @exclude      *://*.apple.com/*
+// @exclude      *://*.icloud.com/*
+// @exclude      *://*.github.com/*
+// @exclude      *://*.gitlab.com/*
+// @exclude      *://*.paypal.com/*
+// @exclude      *://*.stripe.com/*
+// @exclude      *://*.amazon.com/*
+// @exclude      *://*.twitch.tv/*
+// @exclude      *://*.discord.com/*
+// @exclude      *://*.cloudflare.com/*
+// @grant        unsafeWindow
+// @run-at       document-start
+// @downloadURL  https://update.greasyfork.org/scripts/570732/no%20anti-devtools.user.js
+// @updateURL    https://update.greasyfork.org/scripts/570732/no%20anti-devtools.meta.js
 // ==/UserScript==
 
 ;(function (w) {

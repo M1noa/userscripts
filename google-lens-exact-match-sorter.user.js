@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         Google Lens Exact Match Sorter
-// @namespace    https://minoa.cat
-// @version      3.0
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      3.0.1
 // @description  Sorts Google Lens "Exact matches" results with a dropdown.
-// @author       minoa.cat
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://www.google.com/search*udm=48*
 // @grant        none
-// @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/545348/Google%20Lens%20Exact%20Match%20Sorter.user.js
-// @updateURL https://update.greasyfork.org/scripts/545348/Google%20Lens%20Exact%20Match%20Sorter.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/545348/Google%20Lens%20Exact%20Match%20Sorter.user.js
+// @updateURL    https://update.greasyfork.org/scripts/545348/Google%20Lens%20Exact%20Match%20Sorter.meta.js
 // ==/UserScript==
 
 (function() {

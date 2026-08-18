@@ -1,17 +1,19 @@
 // ==UserScript==
-// @name ashrfd+poqzn.xyz bypass
-// @namespace http://tampermonkey.net/
-// @version 0.2
-// @description Automatically submit a form on ashrfd.xyz to bypass it
-// @author Minoa, Greasy MF Fork
-// @match https://poqzn.xyz/*
-// @match https://ashrfd.xyz/*
-// @match https://ashrff.xyz/*
-// @match https://tryzt.xyz/*
-// @grant none
-// @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/493648/ashrfd%2Bpoqznxyz%20bypass.user.js
-// @updateURL https://update.greasyfork.org/scripts/493648/ashrfd%2Bpoqznxyz%20bypass.meta.js
+// @name         Ashrfd & Poqzn.xyz Bypass
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      0.2.1
+// @description  Automatically submit a form on ashrfd.xyz to bypass it.
+// @author       Minoa
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
+// @match        https://poqzn.xyz/*
+// @match        https://ashrfd.xyz/*
+// @match        https://ashrff.xyz/*
+// @match        https://tryzt.xyz/*
+// @grant        none
+// @downloadURL  https://update.greasyfork.org/scripts/493648/ashrfd%2Bpoqznxyz%20bypass.user.js
+// @updateURL    https://update.greasyfork.org/scripts/493648/ashrfd%2Bpoqznxyz%20bypass.meta.js
 // ==/UserScript==
 
 (function() {

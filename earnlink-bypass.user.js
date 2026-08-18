@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name         Earnlink Bypass
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Automatically decrypt and redirect for earnlink.io
+// @namespace    https://gitlab.com/M1noa/userscripts
+// @version      1.0.1
+// @description  Automatically decrypt and redirect for earnlink.io.
 // @author       Minoa
-// @license MIT
+// @license      MIT
+// @homepageURL  https://gitlab.com/M1noa/userscripts
+// @supportURL   https://gitlab.com/M1noa/userscripts/-/issues
 // @match        https://www.earnlink.io/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js
 // @grant        none
-// @downloadURL https://update.greasyfork.org/scripts/501302/Earnlink%20Bypass.user.js
-// @updateURL https://update.greasyfork.org/scripts/501302/Earnlink%20Bypass.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/501302/Earnlink%20Bypass.user.js
+// @updateURL    https://update.greasyfork.org/scripts/501302/Earnlink%20Bypass.meta.js
 // ==/UserScript==
 
 (function() {
