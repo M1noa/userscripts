@@ -1,4 +1,5 @@
 # minoa-userscripts
+> THIS PROJECT WAS MADE PARTIALLY USING AGENTIC AI CODING TOOLS
 
 Collection of my Tampermonkey/Greasemonkey userscripts published on Greasy Fork and Sleazy Fork.
 
