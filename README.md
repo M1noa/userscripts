@@ -29,6 +29,7 @@ Collection of my Tampermonkey/Greasemonkey userscripts published on Greasy Fork 
 | [Samply & Untitled Download Unlock](https://greasyfork.org/en/scripts/575043) | Makes the export/download button appear on all albums on samply.app and untitled.stream |
 | [Twitter Polished Media Downloader](https://greasyfork.org/en/scripts/586507) | Adds a native-looking download button to X/Twitter with highest-quality downloads |
 | [Form Faker](https://greasyfork.org/en/scripts/586783) | Fill any form with realistic fake data pulled from US Census name lists |
+| Google Docs Copy Unlock | Copy from a Google Doc even when the owner disabled copying. Rebuilds the selection or the whole document as text and HTML |
 
 ### Sleazy Fork
 
