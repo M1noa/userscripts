@@ -30,6 +30,7 @@ Collection of my Tampermonkey/Greasemonkey userscripts published on Greasy Fork 
 | [Twitter Polished Media Downloader](https://greasyfork.org/en/scripts/586507) | Adds a native-looking download button to X/Twitter with highest-quality downloads |
 | [Form Faker](https://greasyfork.org/en/scripts/586783) | Fill any form with realistic fake data pulled from US Census name lists |
 | Google Docs Copy Unlock | Copy from a Google Doc even when the owner disabled copying. Ctrl+C and Ctrl+Shift+C write the document to the clipboard, plus a selectable text panel and Markdown/PDF export |
+| AI Blocklist Link Tint | Tints links to sites on the Huge AI Blocklist slightly yellow, with a small warning icon and tooltip, instead of hiding them |
 
 ### Sleazy Fork
 
