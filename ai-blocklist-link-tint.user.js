@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AI Blocklist Link Tint
 // @namespace    https://gitlab.com/M1noa/userscripts
-// @version      1.0.0
+// @version      1.0.2
 // @description  Tints links to sites on the Huge AI Blocklist slightly yellow with a small warning icon and tooltip, instead of hiding them. The list is fetched once a month and cached.
 // @author       Minoa
 // @license      MIT
@@ -29,6 +29,10 @@
   the whole site is listed; a domain plus a path ("bing.com/images/create")
   only matches links into that section, which keeps search engines and big
   platforms from lighting up entirely.
+
+  links that stay on the site you are already on are skipped: on claude.ai a
+  link to claude.ai/settings or docs.claude.ai is not worth a warning, so the
+  current host and its parent/subdomains are never tinted.
 */
 
 (function () {
@@ -164,6 +168,17 @@
     }
 
     return index;
+  }
+
+  // "same site" = the link's host is the page's host, a subdomain of it, or a
+  // parent of it, so internal navigation never gets flagged
+  function isSameSite(hostname, currentHostname) {
+    const host = String(hostname || '').toLowerCase().replace(/^www\./, '');
+    const here = String(currentHostname || '').toLowerCase().replace(/^www\./, '');
+    if (!host || !here) return false;
+    if (host === here) return true;
+    return host.slice(-(here.length + 1)) === '.' + here ||
+      here.slice(-(host.length + 1)) === '.' + host;
   }
 
   function isListed(hostname, pathname) {
@@ -452,7 +467,9 @@
     if (href) {
       try { url = new URL(anchor.href, location.href); } catch (e) {}
     }
-    const listed = !!url && /^https?:$/.test(url.protocol) && isListed(url.hostname, url.pathname);
+    const listed = !!url && /^https?:$/.test(url.protocol) &&
+      !isSameSite(url.hostname, location.hostname) &&
+      isListed(url.hostname, url.pathname);
     if (!listed) {
       untint(anchor);
       return;
